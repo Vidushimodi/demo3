@@ -63,7 +63,8 @@ jobs:
         run: |
           cd terraform
           terraform init
-        # terraform import aws_ecr_repository.repo 211874481576.dkr.ecr.us-east-1.amazonaws.com/tf-automation-repo
+          terraform import aws_ecr_repository.repo 211874481576.dkr.ecr.us-east-1.amazonaws.com/tf-automation-repo
+          terraform init
           terraform apply --auto-approve
     
 
