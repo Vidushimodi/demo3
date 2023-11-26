@@ -54,18 +54,18 @@ jobs:
       #     cd terraform
       #     terraform init
       #     terraform import aws_ecr_repository.repo 211874481576.dkr.ecr.us-east-1.amazonaws.com/tf-automation-repo
-      # - name: Apply terraform
-      #   run: terraform init && terraform apply --auto-approve
-      #   working-directory: terraform 
+      - name: Apply terraform
+        run: terraform init && terraform apply --auto-approve
+        working-directory: terraform 
       # ... (previous steps remain the same)
 
-      - name: Import ECR repository and Apply Terraform
-        run: |
-          cd terraform
-          terraform init
-          terraform import aws_ecr_repository.repo 211874481576.dkr.ecr.us-east-1.amazonaws.com/tf-automation-repo
-          terraform init
-          terraform apply --auto-approve
+      # - name: Import ECR repository and Apply Terraform
+      #   run: |
+      #     cd terraform
+      #     terraform init
+      #     terraform import aws_ecr_repository.repo tf-automation-repo
+      #     terraform init
+      #     terraform apply --auto-approve
     
 
       - name: Export task definition
