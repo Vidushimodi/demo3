@@ -1,0 +1,16 @@
+FROM python:3.8
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy your application code into the container
+COPY . /app
+
+# Install required Python packages
+RUN pip install -r requirements.txt
+
+# Expose the port on which your Streamlit app will run
+EXPOSE 80
+
+# Specify the command to run your Streamlit app
+CMD ["streamlit", "run", "main.py"]
