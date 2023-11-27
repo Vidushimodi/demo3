@@ -57,8 +57,6 @@ jobs:
       - name: Apply terraform
         run: terraform init && terraform apply --auto-approve
         working-directory: terraform 
-      # ... (previous steps remain the same)
-
       # - name: Import ECR repository and Apply Terraform
       #   run: |
       #     cd terraform
